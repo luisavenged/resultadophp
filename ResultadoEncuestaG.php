@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <?php $title = 'Reportes'; ?>
 <?php $currentPage = 'Reportes'; ?>
 <?php include('head.php'); ?>
@@ -16,21 +16,22 @@
            <div class="col-lg-12">
            <a href="exportarDatos.php">Descargar</a>
             <table id="tablaUsuarios" class="table-striped table-bordered" style="width:100%">
+            <caption>Tabla usuarios</caption>
                 <thead class="text-center">
-                    <th>Fecha y Hora</th>
-                    <th>Año</th>
-                    <th>Codigo Encuesta</th>
-                    <th>Responsable</th>
-                    <th>Cargo</th>
-                    <th>Sección</th>
-                    <th>Horario</th>
-                    <th>Pregunta 1 </th>
-                    <th>Respuesta 1</th>
-                    <th>Pregunta 2</th>
-                    <th>Respuesta 2</th>
-                    <th>Pregunta 3</th>
-                    <th>Respuesta 3</th>
-                    <th>Comentario</th>
+                    <th scope="col">Fecha y Hora</th>
+                    <th scope="col">Año</th>
+                    <th scope="col">Codigo Encuesta</th>
+                    <th scope="col">Responsable</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Sección</th>
+                    <th scope="col">Horario</th>
+                    <th scope="col">Pregunta 1 </th>
+                    <th scope="col">Respuesta 1</th>
+                    <th scope="col">Pregunta 2</th>
+                    <th scope="col">Respuesta 2</th>
+                    <th scope="col">Pregunta 3</th>
+                    <th scope="col">Respuesta 3</th>
+                    <th scope="col">Comentario</th>
                 </thead>
                 <tbody>
                     <?php
@@ -40,7 +41,7 @@
                         substr(en.dia_encuesta,1,4) as anno,
                         en.seccion as sec,
                     CASE WHEN en.hora_encuesta < '18:00:00' THEN 'Diurno'
-			             WHEN en.hora_encuesta > '18:00:00' THEN 'Vespertino' END as horario, 
+                         WHEN en.hora_encuesta > '18:00:00' THEN 'Vespertino' END as horario, 
                         en.pregunta1 as p1, 
                     CASE WHEN re.respuesta1 = 1 THEN 'Muy Desacuerdo' 
                          WHEN re.respuesta1 = 2 THEN 'En Desacuerdo' 
@@ -123,11 +124,6 @@
     </div>
    
     <?php
-    /*
-header("Status: 301 Moved Permanently");
-header("Location: ResultadoEncuestaG.php");
-exit;
-*/
 ?>
     
 
@@ -135,3 +131,15 @@ exit;
 </body>
 
 </html>
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
